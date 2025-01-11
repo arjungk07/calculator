@@ -1,0 +1,79 @@
+:root{
+
+    --blue:rgb(58, 58, 219);
+    --pink:rgb(255, 192, 203);
+    --yellow:rgb(255, 255, 0);
+    --orange:rgba(249, 167, 14, 0.949);
+    --white:white;
+}
+/* input  start */
+.aligninput
+{
+  display: flex;
+  justify-content: center;
+  height:20vh;
+  margin-top:3rem;
+}
+/* input */
+.aligninput input{
+  background-image: linear-gradient(45deg,rgb(48, 148, 224)40%,rgb(42, 198, 21));
+  box-shadow: inset 2px 2px 5px var(--white);
+  border:transparent;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  outline: none;
+  padding: 2rem;
+  text-align: start;
+  font-family: sans-serif;
+  font-weight:600;
+  color: aliceblue;
+  box-shadow: 3px 3px 8px rgb(219, 6, 231) ;
+  
+}
+
+input[type="text"]{
+  width: 100%;
+  font-size: 35px;
+  box-sizing: border-box;
+  
+}
+
+/* input end */
+
+.aligncontainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.alignitem{
+  margin-top:4rem;
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap:1rem;
+  height: auto;
+  position: relative;
+  left: auto;
+  right: auto;
+}
+.alignitem button{
+  border-radius:100rem;
+  background-color:rgb(180, 220, 230);
+  padding: 1rem 2rem;
+  position:relative;
+  background-image: linear-gradient(yellow,orange,red);
+  border:transparent;
+  box-shadow: 3px 3px 8px rgb(219, 6, 231);
+}
+
+button:active{
+  background-image: linear-gradient(45deg,rgb(17, 237, 237),rgb(31, 205, 179) 50%);
+
+}
+.image{
+  width:50px; 
+  height:50px;
+  position:absolute;
+  top: 1%;
+  right: 5%;
+}
