@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arjun Calculator</title>
+  <link rel="stylesheet" href="css/calculator.css">
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div>
+      <input type="text" class="it" id="result" disabled></input>
+    </div>
+
+    <div class="fix">
+      <div class="alignitem">
+        <button type="button" onclick="display('%')">%</button>
+        <button type="button" onclick="factor()">!</button>
+        <button type="button" onclick="c()">C</button>
+        <button type="button" onclick="allclear()">AC</button>
+        <button type="button" onclick="sin()">sin</button>
+        <button type="button" onclick="cos()">cos</button>
+        <button type="button" onclick="tan()">tan</button>
+        <button type="button" onclick="log()">log</button>
+        <button type="button" onclick="ln()">ln</button>
+        <button type="button" onclick="sod()">sod</button>
+        <button type="button" onclick="square()">x<sup>2</sup></button>
+        <button type="button" onclick="cube()">x<sup>3</sup></button>
+        <button type="button" onclick="display('9')">9</button>
+        <button type="button" onclick="display('8')">8</button>
+        <button type="button" onclick="display('7')">7</button>
+        <button type="button" onclick="display('/')">/</button>
+        <button type="button" onclick="display('6')">6</button>
+        <button type="button" onclick="display('5')">5</button>
+        <button type="button" onclick="display('4')">4</button>
+        <button type="button" onclick="display('*')">*</button>
+        <button type="button" onclick="display('3')">3</button>
+        <button type="button" onclick="display('2')">2</button>
+        <button type="button" onclick="display('1')">1</button>
+        <button type="button" onclick="display('-')">-</button>
+        <button type="button" onclick="display('.')"><span
+            style="position: absolute; bottom:0.6rem; font-size:30px;">.</span></button>
+        <button type="button" onclick="display('0')">0</button>
+        <button type="button" onclick="calculate('=')">=</button>
+        <button type="button" onclick="display('+')">+</button>
+
+      </div>
+    </div>
+
+
+    <!-- <a href="additional.html"><img src="image/arrow-right-circle.svg" class="image"></a> -->
+  </div>
+</body>
+
+<!-- js -->
+<script>
+  const result = document.getElementById('result');
+
+  const display = (input) => {
+    result.value += input;
+  }
+
+  // clear 
+
+  // AC
+  const allclear = () => {
+    result.value = "";
+    // document.getElementById('a').value = "";
+    // document.getElementById('b').value = "";
+  }
+  // Equal to
+  const calculate = () => {
+    try {
+      result.value = eval(result.value);
+    }
+    catch {
+      result.value = "Maths Error";
+    }
+  }
+  // sum of digit
+  const sod = () => {
+    let result = document.getElementById('result').value;
+    const empty = "";
+
+    if (result != empty) {
+      let rem, sum = 0, sol;
+      while (result != 0) {
+        rem = result % 10;
+        sol = Math.floor(rem);
+        sum = sum + sol;
+        result = result / 10;
+      }
+      document.getElementById('result').value = Math.floor(sum);
+    }
+    else
+      document.getElementById("result").value = "Syantax Error";
+  }
+
+  // factorial
+  const factor = () => {
+    let result = document.getElementById('result').value;
+    const empty = "";
+    if (result != empty) {
+      let fact = 1;
+      for (let i = 1; i <= result; i++) {
+        fact = fact * i;
+      }
+      document.getElementById('result').value = fact;
+    }
+    else {
+      document.getElementById("result").value = "synatax Error";
+    }
+
+  }
+  // square
+  const square = () => {
+    let result = document.getElementById('result').value;
+    if (result != "") {
+      let sol = result * result;
+      document.getElementById('result').value = sol;
+    }
+    else {
+      document.getElementById("result").value = "Syntax Error";
+    }
+  }
+  // cube
+  const cube = () => {
+    let result = document.getElementById('result').value;
+    if (result != "") {
+      let sol = result * result * result;
+      document.getElementById('result').value = sol;
+    }
+    else {
+      document.getElementById("result").value = "Syntax Error";
+    }
+  }
+  // oddeven
+  const oddeven = () => {
+    let result = document.getElementById('result').value;
+    let rem;
+    rem = result % 2;
+    if (rem == 0) {
+      document.getElementById('result').value = "Even ";
+    }
+    else {
+      document.getElementById('result').value = "Odd ";
+    }
+  }
+
+  // leap year
+  const leap = () => {
+    let result = document.getElementById('result').value;
+    console.log(result);
+    let year;
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+      document.getElementById('result').value = "Leap year";
+    }
+    else {
+      document.getElementById('result').value = " Not Leap year";
+
+    }
+  }
+  // sin function
+  const sin = () => {
+    const result = document.getElementById("result").value;
+    const empty = "";
+    if (result != empty) {
+      rad = (result * Math.PI) / 180;
+      const sinvalue = Math.sin(rad);
+      const round = Math.round(sinvalue * 10) / 10;
+      document.getElementById("result").value = 'sin(' + result + ')=' + round;
+    }
+    else {
+      document.getElementById("result").value = "Syantax Error";
+    }
+  }
+  // cos funnction
+  const cos = () => {
+    const result = document.getElementById("result").value;
+    const empty = "";
+    if (result != empty) {
+      rad = (result * Math.PI) / 180;
+      const cosvalue = Math.cos(rad);
+      const round = Math.round(cosvalue * 10) / 10;
+      document.getElementById("result").value = 'cos(' + result + ')=' + round;
+    }
+    else {
+      document.getElementById("result").value = "Syantsx Error";
+    }
+
+  }
+  // tan
+  const tan = () => {
+    const result = document.getElementById("result").value;
+    const empty = "";
+    if (result != empty) {
+      rad = (result * Math.PI) / 180;
+      const cosvalue = Math.tan(rad);
+      const round = Math.round(cosvalue * 10) / 10;
+      document.getElementById("result").value = 'cos(' + result + ')=' + round;
+    }
+    else {
+      document.getElementById("result").value = "Syantax Error";
+    }
+
+  }
+  // log function
+  const log = () => {
+    const result = document.getElementById("result").value;
+    const empty = "";
+    if (result != empty) {
+      const logvalue = Math.log10(result);
+      document.getElementById("result").value = 'log(' + result + ')=' + logvalue;
+    }
+    else {
+      document.getElementById("result").value = "Syntax Error";
+    }
+
+  }
+  // ln function
+  const ln = () => {
+    const result = document.getElementById("result").value;
+    const empty = "";
+    if (result != empty) {
+      const lnvalue = Math.log(result);
+      document.getElementById("result").value = 'ln(' + result + ')=' + lnvalue;
+    }
+    else {
+      document.getElementById("result").value = "Syntax Error";
+    }
+  }
+  //   // a
+  //   const a = () => {
+  //     let result = document.getElementById('result').value;
+  //     document.getElementById('a').value = result;
+  //     document.getElementById('result').value = "";
+  //   }
+  //   // b
+  //   const b = () => {
+  //     let result = document.getElementById('result').value;
+  //     document.getElementById('b').value = result;
+  //     document.getElementById('result').value = "";
+  //   }
+  //   // c
+  //   const c = () => {
+  //     let result = document.getElementById('result').value;
+  //     document.getElementById('c').value = result;
+  //     document.getElementById('result').value = "";
+  //   }
+  //   // (a+b)2
+  //   const plus = () => {
+  //     // a2
+  //     let a = document.getElementById('a').value;
+  //     let asol;
+  //     asol = a * a;
+  //     // b2
+  //     let b = document.getElementById('b').value;
+  //     let bsol;
+  //     bsol = b * b;
+  //     // 2ab
+  //     let twoab = 2 * a * b;
+  //     // algebra solution
+  //     let sol = asol + bsol + twoab;
+  //     document.getElementById('result').value = sol;
+  //   }
+  //   // (a-b)2
+  //   const minus = () => {
+  //     // a2
+  //     let a = document.getElementById('a').value;
+  //     let asol;
+  //     asol = a * a;
+  //     // b2
+  //     let b = document.getElementById('b').value;
+  //     let bsol;
+  //     bsol = b * b;
+  //     // 2ab
+  //     let twoab = 2 * a * b;
+  //     // algebra solution
+  //     let sol = asol + bsol - twoab;
+  //     document.getElementById('result').value = sol;
+  //   }
+  //   // find the greatest of Two Number
+  //   const gcd=()=>{
+  //     let a=document.getElementById("a").value;
+  //     let b=document.getElementById("b").value;
+  //     // find the greatest common digit
+  //     let answer=Math.max(a,b);
+  //     while(answer>0)
+  //   {
+  //     if(a%answer==0 && b%answer==0)
+  //   {
+  //     break;
+  //   }
+  //   answer--;
+  //   }
+  //   document.getElementById("result").value=answer;
+  //   }
+  //   // least common multiply
+  //   const lcm=()=>
+  //   {
+  //     let a=document.getElementById("a").value;
+  //     let b=document.getElementById("b").value;
+  //     let product=a*b;
+  // // find the greatest common digit
+  // let answer=Math.max(a,b);
+  //     while(answer>0)
+  //   {
+  //     if(a%answer==0 && b%answer==0)
+  //   {
+  //     break;
+  //   }
+  //   answer--;
+  //   }
+  //     for(i=0;i<=product;i++)
+  //   {
+  //     if(answer*i==product)
+  //   {
+  //     document.getElementById("result").value=i;
+  //   }
+  //   }
+  //   }
+</script>
+
+
+</html>

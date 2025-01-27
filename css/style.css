@@ -1,0 +1,102 @@
+:root{
+
+    --blue:rgb(58, 58, 219);
+    --pink:rgb(255, 192, 203);
+    --yellow:rgb(255, 255, 0);
+    --orange:rgba(249, 167, 14, 0.949);
+    --white:white;
+}
+
+.textabc{
+  position:absolute;
+  top: 4rem;
+  display: flex;
+  justify-content:space-evenly;
+  width: 100%;
+}
+.textabc input[type="text"]{
+  width:30%;
+  background-image: linear-gradient(45deg,rgb(48, 148, 224)40%,rgb(42, 198, 21));
+  box-shadow:  2px 2px 5px var(--white);
+  border-radius: 0.5rem;
+  height: 7vh;
+  padding-left: 1rem;
+  color: aliceblue;
+  font-family: sans-serif;
+  border:transparent;
+  box-shadow: 3px 3px 8px rgb(219, 6, 231) ;
+
+
+}
+/* input start */
+.aligninput
+{
+  display: flex;
+  justify-content: center;
+  height:10;
+}
+/* input */
+.aligninput input{
+  background-image: linear-gradient(45deg,rgb(48, 148, 224)40%,rgb(42, 198, 21));
+  box-shadow: inset 2px 2px 5px var(--white);
+  border-radius: 1rem;
+  margin-top: 20vh;
+  outline: none;
+  padding: 2rem;
+  text-align: start;
+  font-family:sans-serif;
+  font-weight: 600;
+  color: aliceblue;
+  border:transparent;
+  box-shadow: 3px 3px 8px rgb(219, 6, 231) ;
+
+}
+
+input[type="text"]{
+     
+  font-size: 30px;
+  box-sizing: border-box;
+  width: 100%;
+  
+}
+/* input end */
+
+
+.aligncontainer{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width:100%;
+
+}
+.alignitem{
+  margin-top:10vh;
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap:1rem;
+  padding: auto;
+  position: relative;
+  left: auto;
+  right: auto;
+  box-shadow: inset 2rem 2rem 5rem 15rem var(--white);
+}
+.alignitem button{
+  border-radius:100rem;
+  border: transparent;
+  background-color:rgb(180, 220, 230);
+  padding: 1rem;
+  background-image: linear-gradient(yellow,orange,red);
+  border:transparent;
+  box-shadow: 3px 3px 8px rgb(219, 6, 231);
+}
+
+button:active{
+  background-image: linear-gradient(45deg,rgb(17, 237, 237),rgb(31, 205, 179) 50%);
+
+}
+.image{
+  max-width: 10%;
+  position:absolute;
+  top: 5px;
+  left:10%;
+}
